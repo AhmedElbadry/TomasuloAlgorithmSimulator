@@ -1,9 +1,77 @@
 body {
-	background: #71AFE2;
 	font-family: "Lato", sans-serif;
 }
 *{
 	box-sizing: border-box;
+}
+
+/*for the SVG*/
+.mainSVGbg {
+	fill:#71AFE2;
+}
+.aConnection polyline, .aConnection line {
+	fill: none;
+    stroke: #6598BA;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+
+}
+.aConnection polygon, .aConnection circle {
+	fill: #6598BA;
+}
+
+#CDB.aConnection polyline, #CDB.aConnection line {
+    stroke: #59859E;
+
+}
+#CDB.aConnection polygon, #CDB.aConnection circle {
+	fill: #59859E;
+}
+
+.aConnection:hover polyline, .aConnection:hover line {
+    stroke: #ef4d4d !important;
+
+}
+.aConnection:hover polygon, .aConnection:hover circle {
+	fill: #ef4d4d !important;
+}
+
+
+.aRectBG {
+	fill: #FFFFFF;
+    stroke: #34383A;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+}
+
+/*ALU units*/
+
+.aALUUnitBG{
+    fill: #EAE549;
+    stroke: #34383A;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+}
+.aALUUnitTxt {
+	font-size: 17.7498px;
+}
+
+
+/*memory*/
+.memoryTxt {
+	font-size:29.8114px;
+}
+
+
+/*titles*/
+.svgBlockTitle {
+	fill:#FFFFFF;
+}
+.t1 {
+	font-size:37px;
+}
+.t4 {
+	font-size:20.177px;
 }
 
 .tableCont {
@@ -53,3 +121,4 @@ body {
 .tableCont::-webkit-scrollbar-thumb {
     background: #FF0000;
 }
+
