@@ -1,0 +1,55 @@
+body {
+	background: #71AFE2;
+	font-family: "Lato", sans-serif;
+}
+*{
+	box-sizing: border-box;
+}
+
+.tableCont {
+	height: 100%;
+	overflow-x: auto;
+}
+
+.aTable{
+	border-collapse: collapse;
+	text-align: center;
+	width: 100%;
+}
+
+.aTable td {
+	padding: 5px;
+}
+.bordered td, .aTable td{
+	border: 2px solid #34383A;
+}
+
+.aTable tr:first-child td{
+	border-top: none;
+}
+
+.aTable tr:last-child td{
+	border-bottom: none;
+}
+
+.aTable tr td:first-child{
+	border-left: none;
+}
+
+.aTable tr td:last-child{
+	border-right: none;
+}
+
+
+.tableCont {
+    -ms-overflow-style: none;  // IE 10+
+    overflow: -moz-scrollbars-none;  // Firefox
+}
+.tableCont::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+.tableCont::-webkit-scrollbar-thumb {
+    background: #FF0000;
+}

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#71AFE2;}
+	.st1{fill:none;stroke:#6598BA;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#6598BA;}
+	.st3{fill:none;stroke:#59859E;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:#59859E;}
+	.st5{fill:#FFFFFF;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st6{fill:#EAE549;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st7{fill:#34383A;}
+	.st8{font-family:'Lato-Regular';}
+	.st9{font-size:17.7498px;}
+	.st10{font-size:29.8114px;}
+	.st11{fill:#FFFFFF;}
+	.st12{font-size:37.0158px;}
+	.st13{font-size:20.177px;}
+	.st14{font-size:37px;}
+	.st15{display:none;}
+	.st16{display:inline;fill:#605E0F;}
+</style>
+<g id="BG">
+	<rect class="st0" width="1280" height="720"/>
+</g>
+<g id="Connections">
+	<g id="IQ_x5F_to_x5F_RS">
+		<polyline class="st1" points="747,426 747,358 506,358 506,426 		"/>
+		<polyline class="st1" points="710.6,260.5 710.6,289.5 710.6,352.5 		"/>
+		<polygon class="st2" points="716,349 705.5,349 710.8,357.6 		"/>
+		<polygon class="st2" points="752,421 741.5,421 746.8,429.6 		"/>
+		<polygon class="st2" points="511,421 500.5,421 505.8,429.6 		"/>
+	</g>
+	<g id="IQ_x5F_to_x5F_AddressAdder">
+		<polyline class="st1" points="653,259.5 653,284.5 505.5,284.5 505.5,75.5 266.5,75.5 266.5,99.5 		"/>
+		<polygon class="st2" points="272,95 261.5,95 266.8,103.6 		"/>
+	</g>
+	<g id="AddressAdder_x5F_to_x5F_LDandSW">
+		<polyline class="st1" points="271.8,158.6 271.5,190.5 315.5,190.5 316,210.5 		"/>
+		<polyline class="st1" points="271.5,190.5 212.5,190.5 212.5,210.5 		"/>
+		<polygon class="st2" points="321,207 310.5,207 315.8,215.6 		"/>
+		<polygon class="st2" points="218,207 207.5,207 212.8,215.6 		"/>
+	</g>
+	<g id="RF_x5F_to_x5F_RS">
+		<polygon class="st2" points="584,422 573.5,422 578.8,430.6 		"/>
+		<polygon class="st2" points="673,422 662.5,422 667.8,430.6 		"/>
+		<polygon class="st2" points="822,422 811.5,422 816.8,430.6 		"/>
+		<polygon class="st2" points="911,423 900.5,423 905.8,431.6 		"/>
+		<g>
+			<polyline class="st1" points="1066.5,354.5 1066.5,389.5 1024.5,389.5 1024.5,328.5 578.5,328.5 578.5,426.6 			"/>
+			<line class="st1" x1="816.5" y1="328.5" x2="816.5" y2="426.5"/>
+			<circle class="st2" cx="816.5" cy="328.5" r="3.5"/>
+		</g>
+		<g>
+			<polyline class="st1" points="1095,354.5 1095,403.5 1012.5,403.5 1012.5,343.5 667.5,343.5 667.5,427.6 			"/>
+			<line class="st1" x1="905.5" y1="343.5" x2="905.5" y2="426.6"/>
+			<circle class="st2" cx="905.5" cy="343.5" r="3.5"/>
+		</g>
+	</g>
+	<g id="LDandSW_x5F_to_x5F_Memory">
+		<line class="st1" x1="316" y1="412.5" x2="316" y2="473.5"/>
+		<polyline class="st1" points="212.5,409.5 212.5,445.5 316,445.5 		"/>
+		<line class="st1" x1="131.6" y1="412.5" x2="131.6" y2="473.5"/>
+		<polygon class="st2" points="137,469 126.5,469 131.8,477.6 		"/>
+		<polygon class="st2" points="321,468 310.5,468 315.8,476.6 		"/>
+	</g>
+	<g id="Memorry_x5F_to_x5F_CDB">
+		<line class="st1" x1="226.1" y1="547.5" x2="226.1" y2="674.5"/>
+		<polygon class="st2" points="231,669 220.5,669 225.8,677.6 		"/>
+	</g>
+	<g id="RS2_x5F_to_x5F_MUL">
+		<line class="st1" x1="887.6" y1="573.4" x2="887.6" y2="597.2"/>
+		<line class="st1" x1="816.5" y1="573.4" x2="816.5" y2="597.2"/>
+		<polygon class="st2" points="893,592 882.5,592 887.8,600.6 		"/>
+		<polygon class="st2" points="822,592 811.5,592 816.8,600.6 		"/>
+	</g>
+	<g id="RS2MUL_x5F_to_x5F_CDB">
+		<line class="st1" x1="835.7" y1="655.6" x2="835.7" y2="674.5"/>
+		<polygon class="st2" points="841.3,669 830.8,669 836.1,677.6 		"/>
+	</g>
+	<g id="RS1ADDER_x5F_to_x5F_CDB">
+		<line class="st1" x1="598.7" y1="655.6" x2="598.7" y2="674.5"/>
+		<polygon class="st2" points="604.3,669 593.8,669 599.1,677.6 		"/>
+	</g>
+	<g id="RS1_x5F_to_x5F_ADD">
+		<line class="st1" x1="646.1" y1="573.4" x2="646.1" y2="595.2"/>
+		<line class="st1" x1="565.1" y1="573.4" x2="565.1" y2="596.2"/>
+		<polygon class="st2" points="651,592 640.5,592 645.8,600.6 		"/>
+		<polygon class="st2" points="571,592 560.5,592 565.8,600.6 		"/>
+	</g>
+	<circle class="st2" cx="969.5" cy="215.5" r="3.5"/>
+	<g id="CDB">
+		<polyline class="st3" points="139.1,210.5 139.1,158.5 47.5,158.5 47.5,679.5 1223.5,679.5 1223.5,85.5 1150.5,85.5 1150.5,105.5 
+					"/>
+		<line class="st3" x1="1223.5" y1="374.5" x2="1095" y2="374.5"/>
+		<line class="st3" x1="1223.5" y1="412.5" x2="578.9" y2="412.5"/>
+		<circle class="st4" cx="667.5" cy="412.5" r="3.5"/>
+		<circle class="st4" cx="905.5" cy="412.5" r="3.5"/>
+		<circle class="st4" cx="1095.5" cy="374.5" r="3.5"/>
+		<circle class="st4" cx="578.5" cy="412.5" r="3.5"/>
+		<polygon class="st4" points="1156,100 1145.5,100 1150.8,108.6 		"/>
+		<polygon class="st4" points="144,206 133.5,206 138.8,214.6 		"/>
+	</g>
+</g>
+<g id="Layer_1">
+	<g id="LoadBuffer">
+		<rect id="LoadBuffer_x5F_rect" x="266.5" y="216.5" class="st5" width="99" height="196"/>
+		<rect id="LoadBufferCont" x="266.5" y="216.5" class="st5" width="99" height="196"/>
+	</g>
+	<g id="SoreBuffer">
+		<rect id="SoreBuffer_x5F_rect" x="100.5" y="216.5" class="st5" width="149" height="196"/>
+		<rect id="SoreBufferCont" x="100.5" y="216.5" class="st5" width="149" height="196"/>
+	</g>
+	<g id="AddUnit">
+		<polygon class="st6" points="646.1,655.6 550.6,655.6 528.9,602.2 667.8,602.2 		"/>
+		<text transform="matrix(1 0 0 1 578.946 634.9276)" class="st7 st8 st9">ADD</text>
+	</g>
+	<g id="AddressUnit">
+		<polygon class="st6" points="319.6,158.6 224.1,158.6 202.4,105.2 341.3,105.2 		"/>
+		<text transform="matrix(1 0 0 1 252.446 137.9276)" class="st7 st8 st9">ADD</text>
+	</g>
+	<g id="MulUnit">
+		<polygon class="st6" points="883.5,655.6 787.9,655.6 766.2,602.2 905.2,602.2 		"/>
+		<text transform="matrix(1 0 0 1 816.496 634.9278)" class="st7 st8 st9">MUL</text>
+	</g>
+	<g id="Memory">
+		<rect id="SoreBuffer_1_" x="100.5" y="478.5" class="st5" width="265" height="69"/>
+		<text transform="matrix(1 0 0 1 166.0439 523.0728)" class="st8 st10">MEMORY</text>
+	</g>
+	
+		<image style="display:none;overflow:visible;" width="1144" height="727" xlink:href="../../Capture.PNG"  transform="matrix(1.2299 0 0 1.2299 -74 -980)">
+	</image>
+	<g id="IQ">
+		<g>
+			<rect id="IQ_x5F_rect" x="629.5" y="85.5" class="st5" width="174" height="174"/>
+			<rect id="IQCont" x="629.5" y="85.5" class="st5" width="174" height="174"/>
+		</g>
+		<text transform="matrix(1 0 0 1 696.002 69.7695)" class="st11 st8 st12">IQ</text>
+	</g>
+	<g id="RF">
+		<g>
+			<rect id="RF_x5F_rect" x="1047" y="110.5" class="st5" width="132.5" height="244"/>
+			<rect id="RFCont" x="1047" y="110.5" class="st5" width="132.5" height="244"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1101.002 99.3179)" class="st11 st8 st13">RF</text>
+	</g>
+	<g id="RAT">
+		<g>
+			<rect id="RAT_x5F_rect" x="1047" y="465.5" class="st5" width="132.5" height="183"/>
+			<rect id="RATCont" x="1047" y="465.5" class="st5" width="132.5" height="183"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1095.002 452.3179)" class="st11 st8 st13">RAT</text>
+	</g>
+	<g id="ResStations">
+		<g id="ResStation1">
+			<rect id="ResStation1_x5F_rect" x="492" y="431.6" class="st5" width="212.7" height="141.8"/>
+			<rect id="ResStation1Cont" x="492" y="431.6" class="st5" width="212.7" height="141.8"/>
+		</g>
+		<g id="ResStation2">
+			<rect id="ResStation2_x5F_rect" x="729.4" y="431.6" class="st5" width="212.7" height="141.8"/>
+			<rect id="ResStation2Cont" x="729.4" y="431.6" class="st5" width="212.7" height="141.8"/>
+		</g>
+		<text transform="matrix(1 0 0 1 686 403)" class="st11 st8 st14">RS</text>
+	</g>
+</g>
+<g id="Guides" class="st15">
+	<rect x="1180" y="1" class="st16" width="100" height="50"/>
+	<rect y="670" class="st16" width="100" height="50"/>
+</g>
+</svg>
