@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#71AFE2;}
+	.st1{fill:#FFFFFF;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:#EAE549;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#34383A;}
+	.st4{font-family:'Lato-Regular';}
+	.st5{font-size:17.7498px;}
+	.st6{font-size:29.8114px;}
+	.st7{fill:#FFFFFF;}
+	.st8{font-size:37.0158px;}
+	.st9{font-size:20.177px;}
+	.st10{font-size:37px;}
+	.st11{opacity:0.49;}
+	.st12{fill:#4C5356;}
+	.st13{font-size:20px;}
+	.st14{font-size:16px;}
+	.st15{fill:#EF4D4D;}
+	.st16{font-size:18px;}
+</style>
+<g id="Layer_1">
+	<rect class="st0" width="1280" height="720"/>
+	<rect id="LoadBuffer" x="266.5" y="216.5" class="st1" width="99" height="196"/>
+	<rect id="SoreBuffer" x="100.5" y="216.5" class="st1" width="149" height="196"/>
+	<g id="AddUnit">
+		<polygon class="st2" points="646.1,618.6 550.6,618.6 528.9,565.2 667.8,565.2 		"/>
+		<text transform="matrix(1 0 0 1 578.946 597.9276)" class="st3 st4 st5">ADD</text>
+	</g>
+	<g id="AddressUnit">
+		<polygon class="st2" points="319.6,158.6 224.1,158.6 202.4,105.2 341.3,105.2 		"/>
+		<text transform="matrix(1 0 0 1 252.446 137.9276)" class="st3 st4 st5">ADD</text>
+	</g>
+	<g id="MulUnit">
+		<polygon class="st2" points="883.5,618.6 787.9,618.6 766.2,565.2 905.2,565.2 		"/>
+		<text transform="matrix(1 0 0 1 816.496 597.9278)" class="st3 st4 st5">MUL</text>
+	</g>
+	<g id="Memory">
+		<rect id="SoreBuffer_1_" x="100.5" y="478.5" class="st1" width="265" height="69"/>
+		<text transform="matrix(1 0 0 1 166.0439 523.0728)" class="st4 st6">MEMORY</text>
+	</g>
+	<g id="IQ">
+		<g>
+			<rect id="IQ_x5F_rect" x="629.5" y="85.5" class="st1" width="174" height="174"/>
+			<rect id="IQCont" x="629.5" y="85.5" class="st1" width="174" height="174"/>
+		</g>
+		<text transform="matrix(1 0 0 1 696.002 69.7695)" class="st7 st4 st8">IQ</text>
+	</g>
+	<g id="RF">
+		<g>
+			<rect id="RF_x5F_rect" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
+			<rect id="RFCont" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1101.002 99.3179)" class="st7 st4 st9">RF</text>
+	</g>
+	<g id="RAT">
+		<g>
+			<rect id="RAT_x5F_rect" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
+			<rect id="RATCont" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1095.002 452.3179)" class="st7 st4 st9">RAT</text>
+	</g>
+	<g id="ResStations">
+		<g id="ResStation1">
+			<rect id="ResStation1_x5F_rect" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation1Cont" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
+		</g>
+		<g id="ResStation2">
+			<rect id="ResStation2_x5F_rect" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation2Cont" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
+		</g>
+		<text transform="matrix(1 0 0 1 696 373)" class="st7 st4 st10">RS</text>
+	</g>
+</g>
+<g id="Sidebar">
+	<rect id="SidebarOverlay" y="0" class="st11" width="1280" height="720"/>
+	<rect x="977" class="st3" width="303" height="720"/>
+	<path class="st12" d="M1240.8,324h-224.7c-4.5,0-8.2-3.7-8.2-8.2V90.2c0-4.5,3.7-8.2,8.2-8.2h224.7c4.5,0,8.2,3.7,8.2,8.2v225.7
+		C1249,320.3,1245.3,324,1240.8,324z"/>
+	<text transform="matrix(1 0 0 1 1008 66)" class="st7 st4 st13">Instructions</text>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1008.0823 367.5702)" class="st7 st4 st14">adders</text>
+		<path class="st12" d="M1236,375.3h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
+			C1249,369.5,1243.2,375.3,1236,375.3z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1007.9697 402.7358)" class="st7 st4 st14">multipliers</text>
+		<path class="st12" d="M1236,410.5h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
+			C1249,404.7,1243.2,410.5,1236,410.5z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1006.8572 438.0735)" class="st7 st4 st14">LDalu</text>
+		<path class="st12" d="M1236,445.8h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
+			C1249,440,1243.2,445.8,1236,445.8z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1007.0823 473.3539)" class="st7 st4 st14">RS1</text>
+		<path class="st12" d="M1236,481h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
+			C1249,475.2,1243.2,481,1236,481z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1006.9697 508.5966)" class="st7 st4 st14">RS2</text>
+		<path class="st12" d="M1236,516.3h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
+			C1249,510.4,1243.2,516.3,1236,516.3z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1005.8572 543.8658)" class="st7 st4 st14">LB</text>
+		<path class="st12" d="M1236,551.5h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
+			C1249,545.7,1243.2,551.5,1236,551.5z"/>
+	</g>
+	<g>
+		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1004.8572 579.1078)" class="st7 st4 st14">SB</text>
+		<path class="st12" d="M1236,586.8h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
+			C1249,580.9,1243.2,586.8,1236,586.8z"/>
+	</g>
+	<path class="st15" d="M1153.3,670h-68.4c-11.6,0-21-9.4-21-21l0,0c0-11.6,9.4-21,21-21h68.4c11.6,0,21,9.4,21,21l0,0
+		C1174.3,660.6,1164.9,670,1153.3,670z"/>
+	<text transform="matrix(1 0 0 1 1100.1108 655.0406)" class="st7 st4 st16">RUN</text>
+</g>
+</svg>
