@@ -86,7 +86,8 @@ body {
 }
 
 .aTable td {
-	padding: 5px;
+	padding: 10px 5px;
+	font-size: 20px;
 }
 .bordered td, .aTable td{
 	border: 2px solid #34383A;
