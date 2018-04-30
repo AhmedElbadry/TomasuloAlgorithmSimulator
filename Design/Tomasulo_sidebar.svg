@@ -1,122 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+	 viewBox="0 0 1426 1108.3" style="enable-background:new 0 0 1426 1108.3;" xml:space="preserve">
 <style type="text/css">
 	.st0{fill:#71AFE2;}
 	.st1{fill:#FFFFFF;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
 	.st2{fill:#EAE549;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
 	.st3{fill:#34383A;}
 	.st4{font-family:'Lato-Regular';}
-	.st5{font-size:17.7498px;}
-	.st6{font-size:29.8114px;}
+	.st5{font-size:19.7744px;}
+	.st6{font-size:33.2118px;}
 	.st7{fill:#FFFFFF;}
-	.st8{font-size:37.0158px;}
-	.st9{font-size:20.177px;}
-	.st10{font-size:37px;}
+	.st8{font-size:41.2379px;}
+	.st9{font-size:22.4785px;}
+	.st10{font-size:41.2203px;}
 	.st11{opacity:0.49;}
 	.st12{fill:#4C5356;}
-	.st13{font-size:20px;}
-	.st14{font-size:16px;}
+	.st13{font-size:22.2813px;}
+	.st14{font-size:17.8249px;}
 	.st15{fill:#EF4D4D;}
-	.st16{font-size:18px;}
+	.st16{font-size:20.0531px;}
 </style>
 <g id="Layer_1">
-	<rect class="st0" width="1280" height="720"/>
-	<rect id="LoadBuffer" x="266.5" y="216.5" class="st1" width="99" height="196"/>
-	<rect id="SoreBuffer" x="100.5" y="216.5" class="st1" width="149" height="196"/>
+	<rect y="13" class="st0" width="1426" height="802.1"/>
+	<rect id="LoadBuffer" x="296.9" y="254.2" class="st1" width="110.3" height="218.4"/>
+	<rect id="SoreBuffer" x="112" y="254.2" class="st1" width="166" height="218.4"/>
 	<g id="AddUnit">
-		<polygon class="st2" points="646.1,618.6 550.6,618.6 528.9,565.2 667.8,565.2 		"/>
-		<text transform="matrix(1 0 0 1 578.946 597.9276)" class="st3 st4 st5">ADD</text>
+		<polygon class="st2" points="719.8,702.2 613.4,702.2 589.2,642.7 744,642.7 		"/>
+		<text transform="matrix(1 0 0 1 644.9824 679.1465)" class="st3 st4 st5">ADD</text>
 	</g>
 	<g id="AddressUnit">
-		<polygon class="st2" points="319.6,158.6 224.1,158.6 202.4,105.2 341.3,105.2 		"/>
-		<text transform="matrix(1 0 0 1 252.446 137.9276)" class="st3 st4 st5">ADD</text>
+		<polygon class="st2" points="356.1,189.7 249.6,189.7 225.5,130.2 380.2,130.2 		"/>
+		<text transform="matrix(1 0 0 1 281.2412 166.6777)" class="st3 st4 st5">ADD</text>
 	</g>
 	<g id="MulUnit">
-		<polygon class="st2" points="883.5,618.6 787.9,618.6 766.2,565.2 905.2,565.2 		"/>
-		<text transform="matrix(1 0 0 1 816.496 597.9278)" class="st3 st4 st5">MUL</text>
+		<polygon class="st2" points="984.3,702.2 877.8,702.2 853.6,642.7 1008.4,642.7 		"/>
+		<text transform="matrix(1 0 0 1 909.6279 679.1465)" class="st3 st4 st5">MUL</text>
 	</g>
 	<g id="Memory">
-		<rect id="SoreBuffer_1_" x="100.5" y="478.5" class="st1" width="265" height="69"/>
-		<text transform="matrix(1 0 0 1 166.0439 523.0728)" class="st4 st6">MEMORY</text>
+		<rect id="SoreBuffer_1_" x="112" y="546.1" class="st1" width="295.2" height="76.9"/>
+		<text transform="matrix(1 0 0 1 184.9839 595.7539)" class="st4 st6">MEMORY</text>
 	</g>
 	<g id="IQ">
 		<g>
-			<rect id="IQ_x5F_rect" x="629.5" y="85.5" class="st1" width="174" height="174"/>
-			<rect id="IQCont" x="629.5" y="85.5" class="st1" width="174" height="174"/>
+			<rect id="IQ_x5F_rect" x="701.3" y="108.3" class="st1" width="193.8" height="193.8"/>
+			<rect id="IQCont" x="701.3" y="108.3" class="st1" width="193.8" height="193.8"/>
 		</g>
-		<text transform="matrix(1 0 0 1 696.002 69.7695)" class="st7 st4 st8">IQ</text>
+		<text transform="matrix(1 0 0 1 775.3896 90.7446)" class="st7 st4 st8">IQ</text>
 	</g>
 	<g id="RF">
 		<g>
-			<rect id="RF_x5F_rect" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
-			<rect id="RFCont" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
+			<rect id="RF_x5F_rect" x="1166.4" y="136.1" class="st1" width="147.6" height="271.8"/>
+			<rect id="RFCont" x="1166.4" y="136.1" class="st1" width="147.6" height="271.8"/>
 		</g>
-		<text transform="matrix(1 0 0 1 1101.002 99.3179)" class="st7 st4 st9">RF</text>
+		<text transform="matrix(1 0 0 1 1226.5859 123.6636)" class="st7 st4 st9">RF</text>
 	</g>
 	<g id="RAT">
 		<g>
-			<rect id="RAT_x5F_rect" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
-			<rect id="RATCont" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
+			<rect id="RAT_x5F_rect" x="1166.4" y="531.6" class="st1" width="147.6" height="203.9"/>
+			<rect id="RATCont" x="1166.4" y="531.6" class="st1" width="147.6" height="203.9"/>
 		</g>
-		<text transform="matrix(1 0 0 1 1095.002 452.3179)" class="st7 st4 st9">RAT</text>
+		<text transform="matrix(1 0 0 1 1219.9014 516.9277)" class="st7 st4 st9">RAT</text>
 	</g>
 	<g id="ResStations">
 		<g id="ResStation1">
-			<rect id="ResStation1_x5F_rect" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
-			<rect id="ResStation1Cont" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation1_x5F_rect" x="548.1" y="452.6" class="st1" width="237" height="158"/>
+			<rect id="ResStation1Cont" x="548.1" y="452.6" class="st1" width="237" height="158"/>
 		</g>
 		<g id="ResStation2">
-			<rect id="ResStation2_x5F_rect" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
-			<rect id="ResStation2Cont" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation2_x5F_rect" x="812.5" y="452.6" class="st1" width="237" height="158"/>
+			<rect id="ResStation2Cont" x="812.5" y="452.6" class="st1" width="237" height="158"/>
 		</g>
-		<text transform="matrix(1 0 0 1 696 373)" class="st7 st4 st10">RS</text>
+		<text transform="matrix(1 0 0 1 775.3882 428.5625)" class="st7 st4 st10">RS</text>
 	</g>
 </g>
 <g id="Sidebar">
-	<rect id="SidebarOverlay" y="0" class="st11" width="1280" height="720"/>
-	<rect x="977" class="st3" width="303" height="720"/>
-	<path class="st12" d="M1240.8,324h-224.7c-4.5,0-8.2-3.7-8.2-8.2V90.2c0-4.5,3.7-8.2,8.2-8.2h224.7c4.5,0,8.2,3.7,8.2,8.2v225.7
-		C1249,320.3,1245.3,324,1240.8,324z"/>
-	<text transform="matrix(1 0 0 1 1008 66)" class="st7 st4 st13">Instructions</text>
+	<rect id="SidebarOverlay_2_" y="13" class="st11" width="1426" height="802.1"/>
+	<rect x="1088.4" y="13" class="st3" width="337.6" height="1084"/>
+	<path class="st12" d="M1383.3,374h-252.2c-4.5,0-8.2-3.7-8.2-8.2V112.5c0-4.5,3.7-8.2,8.2-8.2h252.2c4.5,0,8.2,3.7,8.2,8.2v253.3
+		C1391.5,370.3,1387.8,374,1383.3,374z"/>
+	<text transform="matrix(1 0 0 1 1122.9746 86.5459)" class="st7 st4 st13">Instructions</text>
 	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1008.0823 367.5702)" class="st7 st4 st14">adders</text>
-		<path class="st12" d="M1236,375.3h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
-			C1249,369.5,1243.2,375.3,1236,375.3z"/>
+		<text transform="matrix(1 0 0 1 1119.6328 421.8789)" class="st7 st4 st13">Resources</text>
+		<g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1122.9958 461.4977)" class="st7 st4 st14">adders</text>
+				<path class="st12" d="M1378.5,470.1h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,464.3,1385.6,470.1,1378.5,470.1z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1122.871 500.6744)" class="st7 st4 st14">multipliers</text>
+				<path class="st12" d="M1378.5,509.4h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,503.6,1385.6,509.4,1378.5,509.4z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1121.6317 540.043)" class="st7 st4 st14">LDalu</text>
+				<path class="st12" d="M1378.5,548.6h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,542.8,1385.6,548.6,1378.5,548.6z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1121.8822 579.3468)" class="st7 st4 st14">RS1</text>
+				<path class="st12" d="M1378.5,587.9h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,582.1,1385.6,587.9,1378.5,587.9z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1121.7568 618.6094)" class="st7 st4 st14">RS2</text>
+				<path class="st12" d="M1378.5,627.2h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,621.3,1385.6,627.2,1378.5,627.2z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1120.5171 657.9019)" class="st7 st4 st14">LB</text>
+				<path class="st12" d="M1378.5,666.4h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,660.6,1385.6,666.4,1378.5,666.4z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1119.4034 697.1638)" class="st7 st4 st14">SB</text>
+				<path class="st12" d="M1378.5,705.7h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13h108.8c7.2,0,13,5.8,13,13v3
+					C1391.5,699.9,1385.6,705.7,1378.5,705.7z"/>
+			</g>
+		</g>
 	</g>
 	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1007.9697 402.7358)" class="st7 st4 st14">multipliers</text>
-		<path class="st12" d="M1236,410.5h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
-			C1249,404.7,1243.2,410.5,1236,410.5z"/>
+		<text transform="matrix(1 0 0 1 1117.4043 758.3262)" class="st7 st4 st13">Inst. Cycles</text>
+		<g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1118.5399 795.7162)" class="st7 st4 st14">ADD</text>
+				<path class="st12" d="M1374,804.3h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13H1374c7.2,0,13,5.8,13,13v3
+					C1387,798.5,1381.2,804.3,1374,804.3z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1118.4141 834.8929)" class="st7 st4 st14">SUB</text>
+				<path class="st12" d="M1374,843.6h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13H1374c7.2,0,13,5.8,13,13v3
+					C1387,837.8,1381.2,843.6,1374,843.6z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1117.1748 874.2615)" class="st7 st4 st14">MUL</text>
+				<path class="st12" d="M1374,882.9h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13H1374c7.2,0,13,5.8,13,13v3
+					C1387,877,1381.2,882.9,1374,882.9z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1117.4263 913.5663)" class="st7 st4 st14">LD</text>
+				<path class="st12" d="M1374,922.1h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13H1374c7.2,0,13,5.8,13,13v3
+					C1387,916.3,1381.2,922.1,1374,922.1z"/>
+			</g>
+			<g>
+				<text transform="matrix(1 5.630024e-03 -5.630024e-03 1 1117.3009 952.8289)" class="st7 st4 st14">SW</text>
+				<path class="st12" d="M1374,961.4h-108.8c-7.2,0-13-5.8-13-13v-3c0-7.2,5.8-13,13-13H1374c7.2,0,13,5.8,13,13v3
+					C1387,955.6,1381.2,961.4,1374,961.4z"/>
+			</g>
+		</g>
 	</g>
 	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1006.8572 438.0735)" class="st7 st4 st14">LDalu</text>
-		<path class="st12" d="M1236,445.8h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
-			C1249,440,1243.2,445.8,1236,445.8z"/>
+		<path class="st15" d="M1287.2,1065.5h-81c-11.6,0-21-9.4-21-21v-4.8c0-11.6,9.4-21,21-21h81c11.6,0,21,9.4,21,21v4.8
+			C1308.2,1056.1,1298.8,1065.5,1287.2,1065.5z"/>
+		<text transform="matrix(1 0 0 1 1225.5928 1048.8857)" class="st7 st4 st16">RUN</text>
 	</g>
-	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1007.0823 473.3539)" class="st7 st4 st14">RS1</text>
-		<path class="st12" d="M1236,481h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
-			C1249,475.2,1243.2,481,1236,481z"/>
-	</g>
-	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1006.9697 508.5966)" class="st7 st4 st14">RS2</text>
-		<path class="st12" d="M1236,516.3h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
-			C1249,510.4,1243.2,516.3,1236,516.3z"/>
-	</g>
-	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1005.8572 543.8658)" class="st7 st4 st14">LB</text>
-		<path class="st12" d="M1236,551.5h-95c-7.2,0-13-5.8-13-13v0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13v0
-			C1249,545.7,1243.2,551.5,1236,551.5z"/>
-	</g>
-	<g>
-		<text transform="matrix(1 5.626788e-03 -5.626788e-03 1 1004.8572 579.1078)" class="st7 st4 st14">SB</text>
-		<path class="st12" d="M1236,586.8h-95c-7.2,0-13-5.8-13-13l0,0c0-7.2,5.8-13,13-13h95c7.2,0,13,5.8,13,13l0,0
-			C1249,580.9,1243.2,586.8,1236,586.8z"/>
-	</g>
-	<path class="st15" d="M1153.3,670h-68.4c-11.6,0-21-9.4-21-21l0,0c0-11.6,9.4-21,21-21h68.4c11.6,0,21,9.4,21,21l0,0
-		C1174.3,660.6,1164.9,670,1153.3,670z"/>
-	<text transform="matrix(1 0 0 1 1100.1108 655.0406)" class="st7 st4 st16">RUN</text>
 </g>
 </svg>
