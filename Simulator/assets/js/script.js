@@ -162,17 +162,17 @@ function issueInst(ints){
 
 	//syntax for inst: OP rd, rs, rt
 	var OP = ints.substring(0, ints.indexOf(" "));
-	console.log("_"+ OP + "_");
+	//console.log("_"+ OP + "_");
 
 	var rd = ints.substring(ints.indexOf(" ") + 1 , ints.indexOf(", "));
-	console.log("_"+ rd + "_");
+	//console.log("_"+ rd + "_");
 
 	var rs = ints.substring(ints.indexOf(", ") + 2 , ints.indexOf(",", ints.indexOf(", ") + 2));
-	console.log("_"+ rs + "_");
+	//console.log("_"+ rs + "_");
 
 	if(OP != instInfo.LD.OP && OP != instInfo.SW.OP){
 		var rt = ints.substring(ints.lastIndexOf(", ") + 2);
-		console.log("_"+ rt + "_");
+		//console.log("_"+ rt + "_");
 	}
 
 
@@ -280,4 +280,38 @@ console.log(q.retArray());
 
 /*let sum = (a, b) => a + b;
 console.log(sum(5 , 4));*/
+
+
+
+
+
+
+
+
+
+
+/*
+
+ALLOWED syntax
+==============
+OP rd, rs, rt
+OP rd, rs
+OP rd, rs(int)
+OP rd(int), rs
+==============
+
+note: rd, rs and rt should be
+
+first char = the variable called regName
+the number after the char should be inside [0, numOfReg[
+
+ex: F0, F5, F11
+
+
+return true if the input string is one of the formats above, return false otherwise
+
+*/
+function isInstValid(inst){
+	console.log(inst);
+}
 
