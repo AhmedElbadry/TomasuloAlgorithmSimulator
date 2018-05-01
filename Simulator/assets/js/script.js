@@ -31,10 +31,11 @@ var usedResources = {
 }
 var instInfo = {
 	ADD: {cyc: 2, OP: "ADD", nOperands: 2, appr: "+", unit: "RS1"},
-	SUB: {cyc: 2, OP: "SUB", nOperands: 2, appr: "-", unit: "RS1"},
-	MUL: {cyc: 2, OP: "MUL", nOperands: 2, appr: "*", unit: "RS2"},
-	LD: {cyc: 2, OP: "LD", nOperands: 1, appr: "L", unit: "LB"},
-	SW: {cyc: 2, OP: "SW", nOperands: 1, appr: "S", unit: "SB"}
+	SUB: {cyc: 3, OP: "SUB", nOperands: 2, appr: "-", unit: "RS1"},
+	MUL: {cyc: 7, OP: "MUL", nOperands: 2, appr: "*", unit: "RS2"},
+	DIV: {cyc: 10, OP: "DIV", nOperands: 2, appr: "/", unit: "RS2"},
+	LD: {cyc: 5, OP: "LD", nOperands: 1, appr: "L", unit: "LB"},
+	SW: {cyc: 6, OP: "SW", nOperands: 1, appr: "S", unit: "SB"}
 };
 
 
@@ -108,6 +109,18 @@ IQ.push(
 		addrt: 0
 	}
 );
+IQ.push(
+	{	isValid: true,
+		OP: "DIV",
+		rd: "F10",
+		rs: "F13",
+		rt: "F14",
+		addrd: 0,
+		addrs: 0,
+		addrt: 0
+	}
+);
+
 
 
 //registers
@@ -163,9 +176,28 @@ for(let i = 0; i < resources.SB; i++){
 	StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
 }
 
+/*
+results
+
+schema = {
+	res: int,
+	toBeWrittenAfter: int,
+	addedInCyc: int,
+	tag
+}
+
+*/
+var dispRS1q = new Queue();
+var dispRS2q = new Queue();
+var dispLBq = new Queue();
+var dispSBq = new Queue();
+
 
 //Memory
 var Memory = [];
+
+//initialize memory
+
 
 
 
@@ -236,6 +268,17 @@ function updateSB(){
 
 
 
+
+updateIQtable();
+
+updateRFtable();
+
+updateRATtable();
+
+updateRS1();
+updateRS2();
+updateLB();
+updateSB();
 
 
 
@@ -376,6 +419,7 @@ issueInst();
 issueInst();
 issueInst();
 issueInst();
+issueInst();
 
 /*
 =============== END ISSUE ================
@@ -387,14 +431,145 @@ cycleNumber++;
 
 
 /*
-*******************
+********************
 =     DISPATCH     =
-*******************
+********************
+
+{
+	res: int,
+	toBeWrittenAfter: int;
+	addedInCyc: int
+}
 */
 
 function dispatch(){
-	
+
+	//search for ready opearations in RS1
+
+	for(let i = 0; i < resources.RS1; i++){
+		var isDispatched = false;
+
+		//is RS busy
+		if(ResStation1TableCont[i].isBusy){
+			var res = 0;
+
+			//check if the operand are numbers 
+			//and if there are are resources 
+			//and if the instruction is dispatched in a previous cycle
+			if(typeof ResStation1TableCont[i].rs === 'number'
+				&& typeof ResStation1TableCont[i].rt === 'number'
+				&& resources.adders > usedResources.adders
+				&& ResStation1TableCont[i].addedInCyc < cycleNumber){
+
+				//do the operation
+				if(ResStation1TableCont[i].OP == "ADD"){
+					res = ResStation1TableCont[i].rs + ResStation1TableCont[i].rt;
+					isDispatched = true;
+				}else if (ResStation1TableCont[i].OP == "SUB"){
+					res = ResStation1TableCont[i].rs - ResStation1TableCont[i].rt;
+					isDispatched = true;
+				}
+
+				//add the res th dispatch queue
+				if(isDispatched){
+					var temp = {
+								res: res,
+								toBeWrittenAfter: instInfo[ResStation1TableCont[i].OP].cyc,
+								addedInCyc: cycleNumber,
+								tag: ResStation1TableCont[i].tag
+							};
+					dispRS1q.push(temp);
+					usedResources.adders++;
+
+					//empty the RS
+					ResStation1TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS1_" + i, addedInCyc: 0};
+					updateRS1();
+				}
+				
+
+				console.log("dispatch RS1 start");
+				console.log(temp);
+				console.log("used units" + usedResources.adders);
+
+				console.log("dispatch RS1 end");
+			}
+		}
+	}
+
+	for(let i = 0; i < resources.RS2; i++){
+
+		//is RS busy
+		if(ResStation2TableCont[i].isBusy){
+			var res = 0;
+			var isDispatched = false;
+
+			//check if the operand are numbers 
+			//and if there are are resources 
+			//and if the instruction is dispatched in a previous cycle
+			if(typeof ResStation2TableCont[i].rs === 'number'
+				&& typeof ResStation2TableCont[i].rt === 'number'
+				&& resources.multipliers > usedResources.multipliers
+				&& ResStation1TableCont[i].addedInCyc < cycleNumber){
+
+				//do the operation
+				if(ResStation2TableCont[i].OP == "MUL"){
+					res = ResStation2TableCont[i].rs * ResStation2TableCont[i].rt;
+					isDispatched = true;
+				}else if (ResStation2TableCont[i].OP == "DIV"){
+					res = ResStation2TableCont[i].rs / ResStation2TableCont[i].rt;
+					res = res.toFixed(2);
+					isDispatched = true;
+				}
+
+				//add the res th dispatch queue
+				if(isDispatched){
+					var temp = {
+								res: res,
+								toBeWrittenAfter: instInfo[ResStation2TableCont[i].OP].cyc,
+								addedInCyc: cycleNumber,
+								tag: ResStation2TableCont[i].tag
+							};
+					dispRS1q.push(temp);
+					usedResources.multipliers++;
+
+
+				}
+				var temp = {
+							res: res,
+							toBeWrittenAfter: instInfo[ResStation2TableCont[i].OP].cyc,
+							addedInCyc: cycleNumber,
+							tag: ResStation2TableCont[i].tag
+						};
+				dispRS1q.push(temp);
+				usedResources.multipliers++;
+				console.log("dispatch RS2 start");
+				console.log(temp);
+				console.log("used units" + usedResources.multipliers);
+
+				console.log("dispatch RS2 end");
+
+				//empty the RS
+				ResStation2TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS2_" + i, addedInCyc: 0};
+				updateRS2();
+			}
+		}
+
+	}
+
+
+
+	/*
+	for(let i = 0; i < resources.LB; i++){
+		LoadBufferTableCont[i] = {isBusy: false, rs: "-", tag: "LB_" + i, addrs: 0, addedInCyc: 0};
+	}
+	for(let i = 0; i < resources.SB; i++){
+		StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
+	}*/
+
+
 }
+
+dispatch();
 
 
 
@@ -489,16 +664,6 @@ function Queue(){
 	}
 }
 
-updateIQtable();
-
-updateRFtable();
-
-updateRATtable();
-
-updateRS1();
-updateRS2();
-updateLB();
-updateSB();
 
 /*
 var q = new Queue();
