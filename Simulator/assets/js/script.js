@@ -204,7 +204,7 @@ var Memory = [];
 
 //initialize memory
 for (var i = 0; i < 20000; i++) {
-	Memory[i] = i;
+	Memory[i] = i + 1;
 }
 
 
@@ -388,6 +388,8 @@ function addInstToResSation(RS, inst){
 				RS[i].rs = findRegValue(inst.rs);
 				RS[i].addrs = inst.addrs;
 
+				console.log(RS[i]);
+
 				// 4) Tag destination reg (add to RAT)
 				RATtableCont[inst.rd] = RS[i].tag;
 
@@ -403,12 +405,14 @@ function addInstToResSation(RS, inst){
 				// 3) Issue the inst in a free RS
 
 				
-				RS[i].rd = findRegValue(inst.rs);
+				RS[i].rd = findRegValue(inst.rd);
 				RS[i].rs = findRegValue(inst.rs);
 				RS[i].addrs = inst.addrs;
 
+
+
 				// 4) Tag destination reg (add to RAT)
-				RATtableCont[inst.rd] = RS[i].tag;
+				//RATtableCont[inst.rd] = RS[i].tag;
 
 				usedResources[unit]++;
 			}
@@ -419,6 +423,7 @@ function addInstToResSation(RS, inst){
 	if(isAdded){
 		RS[i - 1].isBusy = true;
 		RS[i - 1].addedInCyc = cycleNumber;
+		console.log(RS[i - 1]);
 
 		console.log("Issue " + cycleNumber + ":  the inst: " + instString + " is added to " + unit );
 		
@@ -430,6 +435,12 @@ function addInstToResSation(RS, inst){
 	return isAdded;
 
 }
+
+//will return a tag if found in RAT or a value from RF
+function findRegValue(reg){
+	return (RATtableCont[reg] == "-")? RFtableCont[reg] : RATtableCont[reg];
+}
+
 
 
 
@@ -589,8 +600,14 @@ function dispatch(){
 			tag: LoadBufferTableCont[minnn].tag
 		};
 
+		console.log("the following inst is dispatched");
+		console.log(LoadBufferTableCont[minnn]);
+		console.log("it's res opj");
+		console.log(temp);
+
+
 		dispLBq.push(temp);
-		usedResources.LDalu++;
+		//usedResources.LDalu++;
 
 		LoadBufferTableCont[minnn] = {isBusy: false, rs: "-", tag: "LB_" + minnn, addrs: 0, addedInCyc: 0};
 		updateLB();
@@ -601,6 +618,7 @@ function dispatch(){
 	resss = 0;
 
 	for(let i = 0; i < resources.SB; i++){
+
 		//getting the first instruction added because it is in-order
 		if(StoreBufferTableCont[i].isBusy && (minnn == -1 || StoreBufferTableCont[i].addedInCyc < StoreBufferTableCont[minnn].addedInCyc))
 			minnn = i;
@@ -608,8 +626,9 @@ function dispatch(){
 
 	if(minnn != -1
 		&& typeof StoreBufferTableCont[minnn].rs === 'number'
-		&& StoreBufferTableCont[minnn].rd === 'number'
+		&& typeof StoreBufferTableCont[minnn].rd === 'number'
 		&& StoreBufferTableCont[minnn].addedInCyc < cycleNumber){
+
 
 		resss = StoreBufferTableCont[minnn].rs + StoreBufferTableCont[minnn].addrs;
 		Memory[resss] = StoreBufferTableCont[minnn].rd;
@@ -621,6 +640,11 @@ function dispatch(){
 			tag: StoreBufferTableCont[minnn].tag
 		};
 
+		console.log("the following inst is dispatched");
+		console.log(StoreBufferTableCont[minnn]);
+		console.log("it's res opj");
+		console.log(temp);
+
 		dispSBq.push(temp);
 		//usedResources.LDalu++;
 
@@ -629,13 +653,6 @@ function dispatch(){
 	}
 
 
-	/*
-	for(let i = 0; i < resources.LB; i++){
-		LoadBufferTableCont[i] = {isBusy: false, rs: "-", tag: "LB_" + i, addrs: 0, addedInCyc: 0};
-	}
-	for(let i = 0; i < resources.SB; i++){
-		StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
-	}*/
 
 
 }
@@ -667,8 +684,10 @@ WBq
 function WriteBack(){
 
 
-	
-
+	addReadyResToWBq(dispLBq);
+	addReadyResToWBq(dispRS2q);
+	addReadyResToWBq(dispRS1q);
+	addReadyResToWBq(dispSBq);
 
 	//WB the first ready result
 	if(!WBq.isEmpty()){
@@ -685,6 +704,9 @@ function WriteBack(){
 			console.log("a multipliers is released, the used: " + usedResources.multipliers);
 			
 		}else if (unit == "LB") {
+			console.log("Load WB");
+			console.log(readyRes);
+
 
 		}else if (unit == "SB") {
 			
@@ -693,10 +715,7 @@ function WriteBack(){
 		captureRes(readyRes);
 	}
 
-	addReadyResToWBq(dispLBq);
-	addReadyResToWBq(dispRS2q);
-	addReadyResToWBq(dispRS1q);
-	addReadyResToWBq(dispSBq);
+	
 
 	
 	
@@ -715,9 +734,13 @@ function addReadyResToWBq(dispRSq){
 		var isAdded = false;
 		//add to WBq if ready
 		if(currRes.toBeWrittenAfter <= 0){
-			WBq.push(currRes);
+			if(currRes.res == "-"){
+				console.log("store with the tag "+currRes.tag+" has finished");
+			}else  {
+				WBq.push(currRes);
+				console.log("res with tag" + currRes.tag + " is added to WB queue");
+			}
 			isAdded = true;
-			console.log("res with tag" + currRes.tag + " is added to WB queue");
 
 		}
 
@@ -779,6 +802,9 @@ function captureResRS(readyRes, RS){
 	console.log("to be capture");
 	console.log(readyRes);
 	var unit = (RS[0].tag).substring(0, (RS[0].tag).indexOf("_"));
+
+
+
 	for(let i = 0; i < resources[unit]; i++){
 		var isCaptured = false;
 		if(RS[i].rs == readyRes.tag){
@@ -819,13 +845,6 @@ function captureResRFandRAT(readyRes){
 }
 
 
-
-
-//will return a tag if found in RAT or a value from RF
-function findRegValue(reg){
-
-	return (RATtableCont[reg] == "-")? RFtableCont[reg] : RATtableCont[reg];
-}
 
 
 
