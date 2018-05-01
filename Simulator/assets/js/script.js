@@ -203,7 +203,9 @@ var WBq = new Queue();
 var Memory = [];
 
 //initialize memory
-
+for (var i = 0; i < 20000; i++) {
+	Memory[i] = i;
+}
 
 
 
@@ -510,12 +512,7 @@ function dispatch(){
 		//is RS busy
 		
 		if(ResStation2TableCont[i].isBusy){
-			console.log("dipatch info");
-		console.log(ResStation2TableCont[i]);
-			console.log(typeof ResStation2TableCont[i].rs === 'number');
-			console.log(typeof ResStation2TableCont[i].rt === 'number');
-			console.log(resources.multipliers > usedResources.multipliers);
-			console.log(ResStation2TableCont[i].addedInCyc < cycleNumber);
+
 			var res = 0;
 			var isDispatched = false;
 
@@ -565,6 +562,71 @@ function dispatch(){
 
 	}
 
+
+
+
+	var minnn = -1;
+	var resss = 0;
+
+	for(let i = 0; i < resources.LB; i++){
+		//getting the first instruction added because it is in-order
+		if(LoadBufferTableCont[i].isBusy && (minnn == -1 || LoadBufferTableCont[i].addedInCyc < LoadBufferTableCont[minnn].addedInCyc))
+			minnn = i;
+	}
+
+	if(minnn != -1
+		&& typeof LoadBufferTableCont[minnn].rs === 'number'
+		&& resources.LDalu > usedResources.LDalu
+		&& LoadBufferTableCont[minnn].addedInCyc < cycleNumber){
+
+		resss = LoadBufferTableCont[minnn].rs + LoadBufferTableCont[minnn].addrs;
+		resss = Memory[resss];
+
+		var temp = {
+			res: resss,
+			toBeWrittenAfter: instInfo["LD"].cyc,
+			addedInCyc: cycleNumber,
+			tag: LoadBufferTableCont[minnn].tag
+		};
+
+		dispLBq.push(temp);
+		usedResources.LDalu++;
+
+		LoadBufferTableCont[minnn] = {isBusy: false, rs: "-", tag: "LB_" + minnn, addrs: 0, addedInCyc: 0};
+		updateLB();
+	}
+
+
+	minnn = -1;
+	resss = 0;
+
+	for(let i = 0; i < resources.SB; i++){
+		//getting the first instruction added because it is in-order
+		if(StoreBufferTableCont[i].isBusy && (minnn == -1 || StoreBufferTableCont[i].addedInCyc < StoreBufferTableCont[minnn].addedInCyc))
+			minnn = i;
+	}
+
+	if(minnn != -1
+		&& typeof StoreBufferTableCont[minnn].rs === 'number'
+		&& StoreBufferTableCont[minnn].rd === 'number'
+		&& StoreBufferTableCont[minnn].addedInCyc < cycleNumber){
+
+		resss = StoreBufferTableCont[minnn].rs + StoreBufferTableCont[minnn].addrs;
+		Memory[resss] = StoreBufferTableCont[minnn].rd;
+
+		var temp = {
+			res: '-',
+			toBeWrittenAfter: instInfo["SW"].cyc,
+			addedInCyc: cycleNumber,
+			tag: StoreBufferTableCont[minnn].tag
+		};
+
+		dispSBq.push(temp);
+		//usedResources.LDalu++;
+
+		StoreBufferTableCont[minnn] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + minnn, addrs: 0, addedInCyc: 0};
+		updateSB();
+	}
 
 
 	/*
