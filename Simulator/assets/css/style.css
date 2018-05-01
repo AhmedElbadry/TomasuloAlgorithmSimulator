@@ -128,3 +128,125 @@ body {
     background: #FF0000;
 }
 
+/* sidebar styling */
+
+#sidebar-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 10;
+    display: none;
+}
+#sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #34383a;
+    width: 300px;
+    z-index: 20;
+    padding: 25px;
+    transform: translateX(300px);
+    transition: all .5s ease-in-out;
+}
+#sidebar.open{
+    display: block;
+    transform: translateX(0);
+    overflow-y: scroll;
+}
+body.open{
+    overflow: hidden;
+}
+.icon-o{
+    position: fixed;
+    right: 25px;
+    top: 25px;
+}
+.icon-o #menu-icon{
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    background-color: #ef4d4d;
+    padding-top: 17.5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.icon-o img{
+    width: 25px;
+}
+#sidebar .sim-form{
+    color: #ccc;
+    text-transform: capitalize;
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+#sidebar #sim-form.open{
+    opacity: 1;
+}
+#sidebar .sim-form .instructions{
+    margin-bottom: 20px;
+}
+#sidebar .sim-form .instructions label{
+    display: block;
+    margin-bottom: 10px;
+}
+#sidebar .sim-form .instructions textarea{
+    display: block;
+    width: 100%;
+    border-radius: 10px;
+    outline: 0;
+    border: 0;
+    background-color: #4c5356;
+    resize: none;
+    height: 200px;
+    padding: 15px;
+    color: #fff;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+}
+#sidebar .sim-form .part{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+
+#sidebar .sim-form .part input{
+    float: right;
+    width: 100px;
+    border-radius: 50px;
+    border: 0;
+    outline: 0;
+    padding: 10px 20px;
+    background-color: #4c5356;
+    color: #fff;
+    border: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+#sidebar .sim-form .part input.wrong{
+    border-color: rgba(255, 0, 0, 0.47843137254901963);
+}
+#sidebar .sim-form .submit-o{
+    margin-top: 20px;
+}
+#sidebar .sim-form .submit-o input{
+    border-radius: 50px;
+    padding: 15px 40px;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #ef4d4d;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+}
+#sidebar .sim-form h3{
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+#sidebar .sim-form .part2 label{
+    text-transform: uppercase;
+}

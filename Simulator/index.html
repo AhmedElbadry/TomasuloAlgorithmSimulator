@@ -8,6 +8,96 @@
 </head>
 <body>
 
+    <!-- icon -->
+    <div class="icon-o">
+        <div id="menu-icon">
+            <img src="assets/images/settings.png" alt="menu" />
+        </div>
+    </div>
+    <!-- sidebar -->
+    <div id="sidebar-overlay"></div>
+    <aside id="sidebar">
+
+        <!-- form -->
+        <form class="sim-form" id="sim-form">
+            <div class="instructions">
+                <label for="ins">instructions</label>
+                <textarea id="ins"></textarea>
+            </div>
+
+            <!-- first part -->
+            <h3>resources</h3>
+            <!-- adders -->
+            <div class="part">
+                <label for="adders">adders</label>
+                <input type="text" id="adders" class="pos-num" />
+            </div>
+            <!-- mul -->
+            <div class="part">
+                <label for="mul">multipliers</label>
+                <input type="text" id="mul" class="pos-num" />
+            </div>
+            <!-- ld -->
+            <div class="part">
+                <label for="ld">LDalu</label>
+                <input type="text" id="ld" class="pos-num" />
+            </div>
+            <!-- rs1 -->
+            <div class="part">
+                <label for="rs1">RS1</label>
+                <input type="text" id="rs1" class="pos-num" />
+            </div>
+            <!-- rs2 -->
+            <div class="part">
+                <label for="rs2">RS2</label>
+                <input type="text" id="rs2" class="pos-num" />
+            </div>
+            <!-- lb -->
+            <div class="part">
+                <label for="lb">LB</label>
+                <input type="text" id="lb" class="pos-num" />
+            </div>
+            <!-- sb -->
+            <div class="part">
+                <label for="sb">SB</label>
+                <input type="text" id="sb" class="pos-num" />
+            </div>
+
+            <!-- second part -->
+            <h3>inst. cycles</h3>
+            <!-- add -->
+            <div class="part part2">
+                <label for="ins-add">ADD</label>
+                <input type="text" id="ins-add" class="pos-num" />
+            </div>
+            <!-- sub -->
+            <div class="part part2">
+                <label for="ins-sub">sub</label>
+                <input type="text" id="ins-sub" class="pos-num" />
+            </div>
+            <!-- mul -->
+            <div class="part part2">
+                <label for="ins-mul">mul</label>
+                <input type="text" id="ins-mul" class="pos-num" />
+            </div>
+            <!-- lw -->
+            <div class="part part2">
+                <label for="ins-lw">lw</label>
+                <input type="text" id="ins-lw" class="pos-num" />
+            </div>
+            <!-- sw -->
+            <div class="part part2">
+                <label for="ins-sw">sw</label>
+                <input type="text" id="ins-sw" class="pos-num" />
+            </div>
+
+            <div class="submit-o">
+                <input type="submit" id="form-submit" value="run" onclick="return false;" />
+            </div>
+        </form>
+    </aside>
+
+
 	<div class="svgContainer">
 
 		<?xml version="1.0" encoding="utf-8"?>

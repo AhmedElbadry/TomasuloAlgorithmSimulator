@@ -29,6 +29,7 @@ var usedResources = {
 	LB: 0,
 	SB: 0
 }
+
 var instInfo = {
 	ADD: {cyc: 2, OP: "ADD", nOperands: 2, appr: "+", unit: "RS1"},
 	SUB: {cyc: 3, OP: "SUB", nOperands: 2, appr: "-", unit: "RS1"},
@@ -576,13 +577,13 @@ dispatch();
 
 
 /*
-*******************
-=     CAPTURE     =
-*******************
+*********************
+=     WriteBack     =
+*********************
 */
 
-function capture(){
-
+function WriteBack(){
+	
 }
 
 
@@ -832,5 +833,78 @@ function isInstValid(inst){
 	return ret;
 }
 
-console.log(isInstValid("ADD F0, F2, F3"));
+
+
+
+
+/*
+ADD F0, F2, F3
+LD F0, F2
+SUB F0, F2, F3
+
+
+var IQtableCont = new Queue();
+var IQ = new Queue();
+
+
+var resources = {
+	adders: 2,
+	multipliers: 2,
+	LDalu: 2,
+	RS1: 3,
+	RS2: 3,
+	LB: 3,
+	SB: 3
+}
+
+
+var instInfo = {
+	ADD: {cyc: 2, OP: "ADD", nOperands: 2, appr: "+", unit: "RS1"},
+	SUB: {cyc: 3, OP: "SUB", nOperands: 2, appr: "-", unit: "RS1"},
+	MUL: {cyc: 7, OP: "MUL", nOperands: 2, appr: "*", unit: "RS2"},
+	DIV: {cyc: 10, OP: "DIV", nOperands: 2, appr: "/", unit: "RS2"},
+	LD: {cyc: 5, OP: "LD", nOperands: 1, appr: "L", unit: "LB"},
+	SW: {cyc: 6, OP: "SW", nOperands: 1, appr: "S", unit: "SB"}
+};
+
+
+
+
+*/
+
+
+/** Sidebar functions **/
+$(document).ready(function () {
+    var body = $('body'),
+        sidebar = $('#sidebar'),
+        sidebarForm = $('#sim-form'),
+        sidebarOverlay = $('#sidebar-overlay'),
+        validationResult = true;
+    
+    // open & close
+    $('#menu-icon, #sidebar-overlay').on('click', function() {
+        body.add(sidebar).add(sidebarForm).toggleClass('open');
+        sidebarOverlay.fadeToggle(500);
+    });
+    
+    // validation
+    function validateInput() {
+        if ( !$.isNumeric($(this).val()) || $(this).val() < 0 ){
+            $(this).addClass('wrong');
+            validationResult = false;
+        } else {
+            $(this).removeClass('wrong');
+        }
+    }
+    $('.pos-num').on('blur', validateInput);
+    
+    $('#form-submit').on('click', function() {
+        validationResult = true;
+        $('.pos-num').each( validateInput );
+        if (validationResult === true){
+            // put function here
+        }
+    });
+    
+});
 
