@@ -22,7 +22,11 @@
         <form class="sim-form" id="sim-form">
             <div class="instructions">
                 <label for="ins">instructions</label>
-                <textarea id="ins"></textarea>
+                <textarea id="ins">
+ADD F0, F2, F3
+SUB F1, F4, F5
+MUL F2, F4, F6
+DIV F3, F9, F3</textarea>
             </div>
 
             <!-- first part -->
@@ -30,37 +34,37 @@
             <!-- adders -->
             <div class="part">
                 <label for="adders">adders</label>
-                <input type="text" id="adders" class="pos-num" />
+                <input type="text" id="adders" class="pos-num" value="2"   />
             </div>
             <!-- mul -->
             <div class="part">
                 <label for="mul">multipliers</label>
-                <input type="text" id="mul" class="pos-num" />
+                <input type="text" id="mul"  class="pos-num" value="2"  />
             </div>
             <!-- ld -->
             <div class="part">
                 <label for="ld">LDalu</label>
-                <input type="text" id="ld" class="pos-num" />
+                <input type="text" id="ld" class="pos-num" value="2"  />
             </div>
             <!-- rs1 -->
             <div class="part">
                 <label for="rs1">RS1</label>
-                <input type="text" id="rs1" class="pos-num" />
+                <input type="text" id="rs1" class="pos-num" value="2"  />
             </div>
             <!-- rs2 -->
             <div class="part">
                 <label for="rs2">RS2</label>
-                <input type="text" id="rs2" class="pos-num" />
+                <input type="text" id="rs2" class="pos-num" value="2"  />
             </div>
             <!-- lb -->
             <div class="part">
                 <label for="lb">LB</label>
-                <input type="text" id="lb" class="pos-num" />
+                <input type="text" id="lb" class="pos-num" value="2"  />
             </div>
             <!-- sb -->
             <div class="part">
                 <label for="sb">SB</label>
-                <input type="text" id="sb" class="pos-num" />
+                <input type="text" id="sb" class="pos-num" value="2"  />
             </div>
 
             <!-- second part -->
@@ -68,27 +72,32 @@
             <!-- add -->
             <div class="part part2">
                 <label for="ins-add">ADD</label>
-                <input type="text" id="ins-add" class="pos-num" />
+                <input type="text" id="ins-add" class="pos-num" value="2" />
             </div>
             <!-- sub -->
             <div class="part part2">
                 <label for="ins-sub">sub</label>
-                <input type="text" id="ins-sub" class="pos-num" />
+                <input type="text" id="ins-sub" class="pos-num" value="2" />
             </div>
             <!-- mul -->
             <div class="part part2">
                 <label for="ins-mul">mul</label>
-                <input type="text" id="ins-mul" class="pos-num" />
+                <input type="text" id="ins-mul" class="pos-num" value="2" />
+            </div>
+            <!-- div -->
+            <div class="part part2">
+                <label for="ins-div">div</label>
+                <input type="text" id="ins-div" class="pos-num" value="2" />
             </div>
             <!-- lw -->
             <div class="part part2">
                 <label for="ins-lw">lw</label>
-                <input type="text" id="ins-lw" class="pos-num" />
+                <input type="text" id="ins-lw" class="pos-num" value="2" />
             </div>
             <!-- sw -->
             <div class="part part2">
                 <label for="ins-sw">sw</label>
-                <input type="text" id="ins-sw" class="pos-num" />
+                <input type="text" id="ins-sw" class="pos-num" value="2" />
             </div>
 
             <div class="submit-o">
