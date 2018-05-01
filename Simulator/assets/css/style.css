@@ -6,6 +6,10 @@ body {
 }
 
 /*for the SVG*/
+.svgContainer svg {
+	width: 1280px;
+	height: 720px;
+}
 .mainSVGbg {
 	fill:#71AFE2;
 }
@@ -108,6 +112,7 @@ body {
 .aTable tr td:last-child{
 	border-right: none;
 }
+
 
 
 .tableCont {
