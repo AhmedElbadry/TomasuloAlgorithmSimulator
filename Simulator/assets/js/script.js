@@ -1,4 +1,15 @@
 
+/*var svgContainer = $(".svgContainer");
+var win = $(window);
+
+function setDim(){
+	svgContainer.css("width", $( window ).width() + "px");
+	svgContainer.css("height", ($( window ).width() * 9/14)+ "px");
+}
+
+win.on('resize', setDim);
+setDim();
+*/
 
 /*
 ADD
@@ -7,6 +18,11 @@ LD reg << mem
 SW reg >> mem
 
 */
+
+
+var simStatus = $("#simStatus");
+
+
 
 var cycleNumber = 1;
 //hardware resources
@@ -138,11 +154,7 @@ var RFtableCont = [];
 var RATtable = $("#RATtable");
 var RATtableCont = [];
 
-//initialize RF and RAT
-for(let i = 0; i < numOfReg; i++){
-	RFtableCont[regName + i] = i;
-	RATtableCont[regName + i] = "-";
-}
+
 
 
 //reservation stations
@@ -163,19 +175,7 @@ var StoreBufferTable = $("#StoreBufferTable");
 var StoreBufferTableCont = [];
 
 
-//initialize rs, lb and sb
-for(let i = 0; i < resources.RS1; i++){
-	ResStation1TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS1_" + i, addedInCyc: 0};
-}
-for(let i = 0; i < resources.RS2; i++){
-	ResStation2TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS2_" + i, addedInCyc: 0};
-}
-for(let i = 0; i < resources.LB; i++){
-	LoadBufferTableCont[i] = {isBusy: false, rs: "-", tag: "LB_" + i, addrs: 0, addedInCyc: 0};
-}
-for(let i = 0; i < resources.SB; i++){
-	StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
-}
+
 
 /*
 results
@@ -202,12 +202,38 @@ var WBq = new Queue();
 //Memory
 var Memory = [];
 
-//initialize memory
-for (var i = 0; i < 20000; i++) {
-	Memory[i] = i + 1;
+
+
+
+
+function initialize(){
+
+	//initialize RF and RAT
+	for(let i = 0; i < numOfReg; i++){
+		RFtableCont[regName + i] = i;
+		RATtableCont[regName + i] = "-";
+	}
+
+
+	//initialize rs, lb and sb
+	for(let i = 0; i < resources.RS1; i++){
+		ResStation1TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS1_" + i, addedInCyc: 0};
+	}
+	for(let i = 0; i < resources.RS2; i++){
+		ResStation2TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS2_" + i, addedInCyc: 0};
+	}
+	for(let i = 0; i < resources.LB; i++){
+		LoadBufferTableCont[i] = {isBusy: false, rs: "-", tag: "LB_" + i, addrs: 0, addedInCyc: 0};
+	}
+	for(let i = 0; i < resources.SB; i++){
+		StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
+	}
+
+	//initialize memory
+	for (var i = 0; i < 20000; i++) {
+		Memory[i] = i + 1;
+	}
 }
-
-
 
 
 function updateIQtable () {
@@ -216,6 +242,10 @@ function updateIQtable () {
 	IQtableContArr.forEach(function(el) {
 		IQtable.prepend("<tr><td>" + ((el)? el : "-") + "</td></tr>");
 	});
+	for(let i = 0; i < 4; i++){
+		IQtable.prepend("<tr><td> - </td></tr>");
+	}
+	goToBottomIQ();
 }
 
 function updateRFtable() {
@@ -290,7 +320,9 @@ function updateAll(){
 	updateSB();
 }
 
-updateAll();
+initialize();
+updateRFtable();
+updateRATtable();
 
 
 
@@ -1174,12 +1206,7 @@ $(document).ready(function () {
         // if everything is okay
         if (validationResult === true){
             // emptying queues
-            while( !IQtableCont.isEmpty() ){
-                IQtableCont.pop();
-            }
-            while( !IQ.isEmpty() ){
-                IQ.pop();
-            }
+            restart();
             
             // insert instructions in ret objects into queues
             $.each(instructions, function(n, elem) {
@@ -1205,13 +1232,15 @@ $(document).ready(function () {
             instInfo.SW.cyc = swCyc.val();
             
             // close sidebar
-            setTimeout(sidebarToggle, 1000);
+            setTimeout(sidebarToggle, 100);
 
             console.log(IQtableCont);
             console.log(IQ);
             console.log(resources);
             console.log(instInfo);
             updateAll();
+
+            //simStatus.html("Stared");
         }
     });
     
@@ -1222,35 +1251,107 @@ var controller = 0;
 
 
 function runAcyc(){
+	if(!isSimEmpty()){
+		if(controller == 0){
+			console.log("start cycle " + cycleNumber);
+			console.log("cycle " + cycleNumber + ": issue start");
+			simStatus.html("Cycle " + cycleNumber + ": Issue");
+			if(!IQ.isEmpty()){
+				issueInst();
+			}else {
+				console.log("There is no instructions to issue");
+			}
+			
+			controller++;
+			console.log("cycle " + cycleNumber + ": issue end");
 
-	if(controller == 0){
-		console.log("start cycle " + cycleNumber);
-		console.log("cycle " + cycleNumber + ": issue start");
-		if(!IQ.isEmpty()){
-			issueInst();
-		}else {
-			console.log("There is no instructions to issue");
+		}else if(controller == 1) {
+			console.log("cycle " + cycleNumber + ": dispatch start");
+			simStatus.html("Cycle " + cycleNumber + ": Dispatch");
+			dispatch();
+			controller++;
+			console.log("cycle " + cycleNumber + ": dispatch end");
+		}else if(controller == 2) {
+			console.log("cycle " + cycleNumber + ": WriteBack start");
+			simStatus.html("Cycle " + cycleNumber + ": WriteBack");
+			WriteBack();
+			controller = 0;
+			console.log("cycle " + cycleNumber + ": WriteBack end");
+			console.log("end cycle " + cycleNumber);
+
+			//start new cycle
+			cycleNumber++;
 		}
-		
-		controller++;
-		console.log("cycle " + cycleNumber + ": issue end");
+	}else {
+		console.log("Nothing to simulate");
+		simStatus.html("Nothing to simulate");
 
-	}else if(controller == 1) {
-		console.log("cycle " + cycleNumber + ": dispatch start");
-		dispatch();
-		controller++;
-		console.log("cycle " + cycleNumber + ": dispatch end");
-	}else if(controller == 2) {
-		console.log("cycle " + cycleNumber + ": WriteBack start");
-		WriteBack();
-		controller = 0;
-		console.log("cycle " + cycleNumber + ": WriteBack end");
-		console.log("end cycle " + cycleNumber);
-
-		//start new cycle
-		cycleNumber++;
 	}
 
-	
+}
+
+function isSimEmpty(){
+	var isEmpty = true;
+
+	for(let i = 0; i < resources.RS1; i++){
+		if(ResStation1TableCont[i].isBusy)
+			isEmpty = false;
+	}
+	for(let i = 0; i < resources.RS2; i++){
+		if(ResStation2TableCont[i].isBusy)
+			isEmpty = false;
+	}
+	for(let i = 0; i < resources.LB; i++){
+		if(LoadBufferTableCont[i].isBusy)
+			isEmpty = false;
+	}
+	for(let i = 0; i < resources.SB; i++){
+		if(StoreBufferTableCont[i].isBusy)
+			isEmpty = false;
+	}
+
+	if(!IQ.isEmpty() || !dispRS1q.isEmpty() || !dispRS2q.isEmpty() ||
+		!dispLBq.isEmpty() || !dispSBq.isEmpty() || !WBq.isEmpty() )
+		isEmpty = false;
+
+
+	return isEmpty;
+
+}
+
+function restart(){
+	while( !IQtableCont.isEmpty() ){
+		IQtableCont.pop();
+	}
+	while( !IQ.isEmpty() ){
+		IQ.pop();
+	}
+	while( !dispRS1q.isEmpty() ){
+		dispRS1q.pop();
+	}
+	while( !dispRS2q.isEmpty() ){
+		dispRS2q.pop();
+	}
+	while( !dispLBq.isEmpty() ){
+		dispLBq.pop();
+	}
+	while( !dispSBq.isEmpty() ){
+		dispSBq.pop();
+	}
+	while( !IQ.isEmpty() ){
+		WBq.pop();
+	}
+
+	cycleNumber = 1;
+	simStatus.html("Started");
+}
+$('#play-icon').on('click', runAcyc);
+
+
+
+function goToBottomIQ(){
+	$("#IQtableCont").animate({
+		scrollTop: 50000
+	}, 0);
 }
 

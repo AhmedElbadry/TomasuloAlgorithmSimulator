@@ -1,0 +1,37 @@
+LD F0, 100(F2)
+
+
+
+SW F2, 100(F0)
+
+
+
+
+
+
+adders: 3 units
+LD: 2 units
+mul: 2 units
+
+Load: 2 cycles
+Add: 2 cycles
+Mult: 10 cycles
+Divide: 40 cycles
+
+LD F6, 34(F0)
+LD F2, 45(F12)
+MUL F0, F2, F4
+SUB F8, F2, F6
+DIV F10, F0, F6
+ADD F6, F8, F2
+
+
+= SOLUTION =
+
+Inst Operands 		Is 	Exec	Wr Comments
+LD F6, 34(F0)		1 	2 	4
+LD F2, 45(F12)		2 	3 	5
+MUL F0, F2, F4		3 	6 	16
+SUB F8, F2, F6		4 	6 	8
+DIV F10, F0, F6		5 	17	57
+ADD F6, F8, F2		6 	9 	11

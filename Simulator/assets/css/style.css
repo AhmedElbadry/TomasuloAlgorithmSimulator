@@ -1,10 +1,33 @@
+body, html {
+    width: 100%;
+    height: 100%;
+}
+
 body {
 	font-family: "Lato", sans-serif;
+    background: #71afe2;
 }
 *{
 	box-sizing: border-box;
 }
+.svgContainer {
+    width: 1280px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
+
+
+/*status*/
+#simStatus {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 25px;
+}
 /*for the SVG*/
 .svgContainer svg {
 	width: 1280px;
@@ -59,6 +82,10 @@ body {
 .aALUUnitTxt {
 	font-size: 17.7498px;
 }
+
+
+
+
 
 
 /*memory*/
@@ -146,10 +173,10 @@ body {
     right: 0;
     bottom: 0;
     background-color: #34383a;
-    width: 300px;
+    width: 400px;
     z-index: 20;
-    padding: 25px;
-    transform: translateX(300px);
+    padding: 25px 50px;
+    transform: translateX(400px);
     transition: all .5s ease-in-out;
 }
 #sidebar.open{
@@ -165,7 +192,7 @@ body.open{
     right: 25px;
     top: 25px;
 }
-.icon-o #menu-icon{
+.icon-o .icon{
     width: 60px;
     height: 60px;
     text-align: center;
@@ -173,7 +200,9 @@ body.open{
     padding-top: 17.5px;
     border-radius: 50%;
     cursor: pointer;
+    margin-bottom: 15px;
 }
+
 .icon-o img{
     width: 25px;
 }
@@ -230,7 +259,8 @@ body.open{
     border-color: rgba(255, 0, 0, 0.47843137254901963);
 }
 #sidebar .sim-form .submit-o{
-    margin-top: 20px;
+    margin-top: 30px;
+    text-align: center;
 }
 #sidebar .sim-form .submit-o input{
     border-radius: 50px;
@@ -249,4 +279,8 @@ body.open{
 }
 #sidebar .sim-form .part2 label{
     text-transform: uppercase;
+}
+
+.pos-num {
+    text-align: center;
 }
