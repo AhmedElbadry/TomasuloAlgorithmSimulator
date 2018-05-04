@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1280 720" style="enable-background:new 0 0 1280 720;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#71AFE2;}
+	.st1{fill:#FFFFFF;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:3;stroke-miterlimit:10;}
+	.st3{fill:#EAE549;stroke:#34383A;stroke-width:3;stroke-miterlimit:10;}
+	.st4{fill:#34383A;}
+	.st5{font-family:'Lato-Regular';}
+	.st6{font-size:17.7498px;}
+	.st7{font-size:29.8114px;}
+	.st8{fill:#FFFFFF;}
+	.st9{font-size:37.0158px;}
+	.st10{font-size:20.177px;}
+	.st11{font-size:37px;}
+	.st12{display:none;}
+	.st13{display:inline;fill:#605E0F;}
+</style>
+<g id="Layer_1">
+	<rect class="st0" width="1280" height="720"/>
+	<rect id="LoadBuffer" x="266.5" y="216.5" class="st1" width="99" height="196"/>
+	<g id="scrollers_5_">
+		<g id="scrollDown_5_">
+			<rect x="268" y="386" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 632 797)" width="96" height="25"/>
+			<polyline class="st2" points="326.8,393.4 316.2,404 305.2,393 			"/>
+		</g>
+		<g id="scrollUp_5_">
+			<rect x="268" y="218" width="96" height="25"/>
+			<polyline class="st2" points="305.2,235.6 315.8,225 326.8,236 			"/>
+		</g>
+	</g>
+	<rect id="SoreBuffer" x="100.5" y="216.5" class="st1" width="149" height="196"/>
+	<g id="scrollers_6_">
+		<g id="scrollDown_6_">
+			<rect x="102" y="386" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 350 797)" width="146" height="25"/>
+			<polyline class="st2" points="185.8,393.4 175.2,404 164.2,393 			"/>
+		</g>
+		<g id="scrollUp_6_">
+			<rect x="102" y="218" width="146" height="25"/>
+			<polyline class="st2" points="164.2,235.6 174.8,225 185.8,236 			"/>
+		</g>
+	</g>
+	<g id="AddUnit">
+		<polygon class="st3" points="646.1,618.6 550.6,618.6 528.9,565.2 667.8,565.2 		"/>
+		<text transform="matrix(1 0 0 1 578.946 597.9276)" class="st4 st5 st6">ADD</text>
+	</g>
+	<g id="AddressUnit">
+		<polygon class="st3" points="319.6,158.6 224.1,158.6 202.4,105.2 341.3,105.2 		"/>
+		<text transform="matrix(1 0 0 1 252.446 137.9276)" class="st4 st5 st6">ADD</text>
+	</g>
+	<g id="MulUnit">
+		<polygon class="st3" points="883.5,618.6 787.9,618.6 766.2,565.2 905.2,565.2 		"/>
+		<text transform="matrix(1 0 0 1 816.496 597.9278)" class="st4 st5 st6">MUL</text>
+	</g>
+	<g id="Memory">
+		<rect id="SoreBuffer_1_" x="100.5" y="478.5" class="st1" width="265" height="69"/>
+		<text transform="matrix(1 0 0 1 166.0439 523.0728)" class="st5 st7">MEMORY</text>
+	</g>
+	<g id="IQ">
+		<g>
+			<rect id="IQ_x5F_rect" x="629.5" y="85.5" class="st1" width="174" height="174"/>
+			<rect id="IQCont" x="629.5" y="85.5" class="st1" width="174" height="174"/>
+		</g>
+		<text transform="matrix(1 0 0 1 696.002 69.7695)" class="st8 st5 st9">IQ</text>
+		<g id="scrollers_1_">
+			<g id="scrollDown_1_">
+				<rect x="631" y="235" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 1433 493)" width="171" height="23"/>
+				<polyline class="st2" points="727.3,241.4 716.7,252 705.7,241 				"/>
+			</g>
+			<g id="scrollUp_1_">
+				<rect x="631" y="87" width="171" height="23"/>
+				<polyline class="st2" points="705.7,103.6 716.3,93 727.3,104 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="RF">
+		<g>
+			<rect id="RF_x5F_rect" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
+			<rect id="RFCont" x="1047" y="110.5" class="st1" width="132.5" height="244"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1101.002 99.3179)" class="st8 st5 st10">RF</text>
+		<g id="scrollers">
+			<g id="scrollDown">
+				<rect x="1048" y="330" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 2226 683)" width="130" height="23"/>
+				<polyline class="st2" points="1123.8,336.4 1113.2,347 1102.2,336 				"/>
+			</g>
+			<g id="scrollUp">
+				<rect x="1048" y="112" width="130" height="23"/>
+				<polyline class="st2" points="1102.2,128.6 1112.8,118 1123.8,129 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="RAT">
+		<g>
+			<rect id="RAT_x5F_rect" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
+			<rect id="RATCont" x="1047" y="465.5" class="st1" width="132.5" height="183"/>
+		</g>
+		<text transform="matrix(1 0 0 1 1095.002 452.3179)" class="st8 st5 st10">RAT</text>
+		<g id="scrollers_2_">
+			<g id="scrollDown_2_">
+				<rect x="1048" y="624" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 2226 1271)" width="130" height="23"/>
+				<polyline class="st2" points="1123.8,630.4 1113.2,641 1102.2,630 				"/>
+			</g>
+			<g id="scrollUp_2_">
+				<rect x="1048" y="467" width="130" height="23"/>
+				<polyline class="st2" points="1102.2,483.6 1112.8,473 1123.8,484 				"/>
+			</g>
+		</g>
+	</g>
+	<g id="ResStations">
+		<g id="ResStation1">
+			<rect id="ResStation1_x5F_rect" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation1Cont" x="492" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<g id="scrollers_4_">
+				<g id="scrollDown_4_">
+					<rect x="493" y="510" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 1197 1045)" width="211" height="25"/>
+					<polyline class="st2" points="609.3,517.4 598.7,528 587.7,517 					"/>
+				</g>
+				<g id="scrollUp_4_">
+					<rect x="493" y="396" width="211" height="25"/>
+					<polyline class="st2" points="587.7,413.6 598.3,403 609.3,414 					"/>
+				</g>
+			</g>
+		</g>
+		<g id="ResStation2">
+			<rect id="ResStation2_x5F_rect" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<rect id="ResStation2Cont" x="729.4" y="394.6" class="st1" width="212.7" height="141.8"/>
+			<g id="scrollers_3_">
+				<g id="scrollDown_3_">
+					<rect x="730" y="510" transform="matrix(-1 -1.224647e-16 1.224647e-16 -1 1671 1045)" width="211" height="25"/>
+					<polyline class="st2" points="846.3,517.4 835.7,528 824.7,517 					"/>
+				</g>
+				<g id="scrollUp_3_">
+					<rect x="730" y="396" width="211" height="25"/>
+					<polyline class="st2" points="824.7,413.6 835.3,403 846.3,414 					"/>
+				</g>
+			</g>
+		</g>
+		<text transform="matrix(1 0 0 1 696 373)" class="st8 st5 st11">RS</text>
+	</g>
+</g>
+<g id="Guides" class="st12">
+	<rect x="1180" y="1" class="st13" width="100" height="50"/>
+	<rect y="670" class="st13" width="100" height="50"/>
+</g>
+</svg>

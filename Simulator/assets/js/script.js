@@ -1,30 +1,11 @@
 
-/*var svgContainer = $(".svgContainer");
-var win = $(window);
-
-function setDim(){
-	svgContainer.css("width", $( window ).width() + "px");
-	svgContainer.css("height", ($( window ).width() * 9/14)+ "px");
-}
-
-win.on('resize', setDim);
-setDim();
-*/
-
-/*
-ADD
-SUB
-LD reg << mem
-SW reg >> mem
-
-*/
-
 
 var simStatus = $("#simStatus");
 
 
 
 var cycleNumber = 1;
+
 //hardware resources
 
 var resources = {
@@ -60,85 +41,6 @@ var IQtable = $("#IQtable");
 var IQtableCont = new Queue();
 var IQ = new Queue();
 
-/*
-IQtableCont.push("ADD F0, F2, F3");
-IQtableCont.push("LD F0, F2(1000)");
-IQtableCont.push("ADD F0, F2, F3");
-IQtableCont.push("ADD F0, F2, F3");
-IQtableCont.push("LD F0, F2(1000)");
-IQtableCont.push("ADD F0, F2, F3");
-IQtableCont.push("ADD F0, F2, F3");
-IQtableCont.push("LD F0, F2(1000)");
-IQtableCont.push("ADD F0, F2, F3");
-
-IQ.push(
-	{	isValid: true,
-		OP: "ADD",
-		rd: "F0",
-		rs: "F1",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-
-IQ.push(
-	{	isValid: true,
-		OP: "LD",
-		rd: "F1",
-		rs: "F2",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-IQ.push(
-	{	isValid: true,
-		OP: "ADD",
-		rd: "F2",
-		rs: "F3",
-		rt: "F4",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-IQ.push(
-	{	isValid: true,
-		OP: "SUB",
-		rd: "F3",
-		rs: "F3",
-		rt: "F4",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-
-IQ.push(
-	{	isValid: true,
-		OP: "MUL",
-		rd: "F4",
-		rs: "F3",
-		rt: "F4",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-IQ.push(
-	{	isValid: true,
-		OP: "DIV",
-		rd: "F10",
-		rs: "F13",
-		rt: "F14",
-		addrd: 0,
-		addrs: 0,
-		addrt: 0
-	}
-);
-
-*/
 
 //registers
 var numOfReg = 16;
@@ -173,6 +75,7 @@ var LoadBufferTableCont = [];
 //store buffer
 var StoreBufferTable = $("#StoreBufferTable");
 var StoreBufferTableCont = [];
+
 
 
 
@@ -233,6 +136,8 @@ function initialize(){
 	for (var i = 0; i < 20000; i++) {
 		Memory[i] = i + 1;
 	}
+
+	setTimeout(checkScroll, 200);
 }
 
 
@@ -796,26 +701,6 @@ function addReadyResToWBq(dispRSq){
 
 
 
-/*
-
-//initialize rs, lb and sb
-for(let i = 0; i < resources.RS1; i++){
-	ResStation1TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS1_" + i, addedInCyc: 0};
-}
-for(let i = 0; i < resources.RS2; i++){
-	ResStation2TableCont[i] = {isBusy: false, OP: "-", appr: "-", rs: "-", rt: "-", tag: "RS2_" + i, addedInCyc: 0};
-}
-for(let i = 0; i < resources.LB; i++){
-	LoadBufferTableCont[i] = {isBusy: false, rs: "-", tag: "LB_" + i, addrs: 0, addedInCyc: 0};
-}
-for(let i = 0; i < resources.SB; i++){
-	StoreBufferTableCont[i] = {isBusy: false, rd: "-", rs: "-", tag: "SB_" + i, addrs: 0, addedInCyc: 0};
-}
-
-
-*/
-
-
 function captureRes(readyRes){
 
 	captureResRS(readyRes, ResStation1TableCont);
@@ -938,26 +823,6 @@ function Queue(){
 		return arr;
 	}
 }
-
-
-
-/*
-var q = new Queue();
-
-q.push(1);
-var a = q.pop();
-
-
-console.log(a);
-*/
-
-
-
-
-/*let sum = (a, b) => a + b;
-console.log(sum(5 , 4));*/
-
-
 
 
 
@@ -1105,41 +970,6 @@ function isInstValid(inst){
 
 
 
-/*
-ADD F0, F2, F3
-LD F0, F2
-SUB F0, F2, F3
-
-
-var IQtableCont = new Queue();
-var IQ = new Queue();
-
-
-var resources = {
-	adders: 2,
-	multipliers: 2,
-	LDalu: 2,
-	RS1: 3,
-	RS2: 3,
-	LB: 3,
-	SB: 3
-}
-
-
-var instInfo = {
-	ADD: {cyc: 2, OP: "ADD", nOperands: 2, appr: "+", unit: "RS1"},
-	SUB: {cyc: 3, OP: "SUB", nOperands: 2, appr: "-", unit: "RS1"},
-	MUL: {cyc: 7, OP: "MUL", nOperands: 2, appr: "*", unit: "RS2"},
-	DIV: {cyc: 10, OP: "DIV", nOperands: 2, appr: "/", unit: "RS2"},
-	LD: {cyc: 5, OP: "LD", nOperands: 1, appr: "L", unit: "LB"},
-	SW: {cyc: 6, OP: "SW", nOperands: 1, appr: "S", unit: "SB"}
-};
-
-
-
-
-*/
-
 /** Sidebar functions **/
 $(document).ready(function () {
     var body = $('body'),
@@ -1230,6 +1060,8 @@ $(document).ready(function () {
             instInfo.DIV.cyc = divCyc.val();
             instInfo.LD.cyc = lwCyc.val();
             instInfo.SW.cyc = swCyc.val();
+
+            initialize();
             
             // close sidebar
             setTimeout(sidebarToggle, 100);
@@ -1354,4 +1186,68 @@ function goToBottomIQ(){
 		scrollTop: 50000
 	}, 0);
 }
+
+
+
+/*Custom scrollers*/
+
+var mouseDown = -1;
+
+var marginTop = 0;
+
+function checkScroll(){
+	$(".scrollers").each(function(index, ele) {
+		var ele = $(this);
+		var contH = ele.parent().find(".tableCont").height();
+		var fullH = ele.parent().find(".aTable").height();
+
+		console.log(contH);
+		console.log(fullH);
+
+		if(fullH > contH){
+			ele.css("display", "block");
+		}else {
+			ele.css("display", "none");
+		}
+	});
+}
+function scrollDown(event){
+	var ele = $(event.currentTarget).parent().parent();
+	var contH = ele.find(".tableCont").height();
+	var fullH = ele.find(".aTable").height();
+
+	var checkH = fullH - contH;
+
+	if(checkH -20 >= -1*marginTop){
+		marginTop -= 20;
+		ele.find(".aTable").css("margin-top", marginTop + "px");
+		
+	}else {
+		ele.find(".aTable").css("margin-top", (-1 * checkH)  + "px");
+		marginTop = -1 * checkH;
+	}
+}
+
+function scrollUp(event){
+	var ele = $(event.currentTarget).parent().parent();
+
+	console.log(ele.find(".aTable").css("marginTop"));
+	console.log(marginTop);
+
+	if(parseInt(ele.find(".aTable").css("marginTop")) <= -20){
+		marginTop += 20;
+		ele.find(".aTable").css("margin-top", marginTop + "px");
+		
+	}else {
+		ele.find(".aTable").css("margin-top",  "0px");
+		marginTop = 0;
+	}
+}
+
+
+
+$(".scrollDown").on('click', scrollDown);
+
+
+$(".scrollUp").on('click', scrollUp);
 
